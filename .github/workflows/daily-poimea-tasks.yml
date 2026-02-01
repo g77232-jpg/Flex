@@ -1,0 +1,82 @@
+name: Daily Poimea Task Generator
+
+on:
+  schedule:
+    # Run daily at 9:00 AM UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch: # Allow manual trigger
+  push:
+    paths:
+      - 'poimea-project.json'
+      - 'generate_poimea_tasks.py'
+
+jobs:
+  generate-poimea-tasks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate Poimea Daily Tasks
+        run: |
+          python3 generate_poimea_tasks.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --exit-code POIMEA_DAILY_TASK.md POIMEA_PROGRESS_REPORT.md || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add POIMEA_DAILY_TASK.md POIMEA_PROGRESS_REPORT.md
+          git commit -m "📖 Update Poimea daily tasks - $(date +'%Y-%m-%d')"
+          git push
+
+      - name: Summary
+        run: |
+          echo "### 📖 Poimea Tasks Generated Successfully! ✅" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Generated files:" >> $GITHUB_STEP_SUMMARY
+          echo "- POIMEA_DAILY_TASK.md - Today's writing and storyboard tasks" >> $GITHUB_STEP_SUMMARY
+          echo "- POIMEA_PROGRESS_REPORT.md - Comprehensive progress tracking" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Extract and display key metrics
+          if [ -f "poimea-project.json" ]; then
+            echo "#### 📊 Quick Stats" >> $GITHUB_STEP_SUMMARY
+            python3 -c "
+import json
+with open('poimea-project.json') as f:
+    data = json.load(f)
+    words = data['phases']['book1']['current_word_count']
+    target = data['phases']['book1']['target_word_count']
+    scenes = data['storyboard']['scenes_completed']
+    total_scenes = data['storyboard']['total_scenes']
+    pct = (words / target * 100)
+    scene_pct = (scenes / total_scenes * 100)
+    print(f'- **Book Progress:** {words:,} / {target:,} words ({pct:.1f}%)')
+    print(f'- **Storyboard:** {scenes} / {total_scenes} scenes ({scene_pct:.1f}%)')
+" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check_changes.outputs.changes }}" == "true" ]; then
+            echo "✨ Changes committed and pushed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ No changes detected" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🚀 Keep writing! You're making progress every day!" >> $GITHUB_STEP_SUMMARY

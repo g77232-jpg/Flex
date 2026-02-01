@@ -1,0 +1,44 @@
+{
+  "books": [
+    {
+      "title": "The Pragmatic Programmer",
+      "authors": ["David Thomas", "Andrew Hunt"],
+      "date": "1999-10-30",
+      "category": "Software Engineering",
+      "description": "Your journey to mastery",
+      "link": "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/"
+    },
+    {
+      "title": "Clean Code",
+      "authors": ["Robert C. Martin"],
+      "date": "2008-08-01",
+      "category": "Software Engineering",
+      "description": "A Handbook of Agile Software Craftsmanship",
+      "link": "https://www.pearson.com/en-us/subject-catalog/p/clean-code-a-handbook-of-agile-software-craftsmanship/P200000009044"
+    },
+    {
+      "title": "Design Patterns",
+      "authors": ["Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"],
+      "date": "1994-10-31",
+      "category": "Software Architecture",
+      "description": "Elements of Reusable Object-Oriented Software",
+      "link": "https://www.pearson.com/en-us/subject-catalog/p/design-patterns-elements-of-reusable-object-oriented-software/P200000009044"
+    },
+    {
+      "title": "Refactoring",
+      "authors": ["Martin Fowler"],
+      "date": "1999-07-08",
+      "category": "Software Engineering",
+      "description": "Improving the Design of Existing Code",
+      "link": "https://martinfowler.com/books/refactoring.html"
+    },
+    {
+      "title": "The Mythical Man-Month",
+      "authors": ["Frederick P. Brooks Jr."],
+      "date": "1975-01-01",
+      "category": "Project Management",
+      "description": "Essays on Software Engineering",
+      "link": "https://www.pearson.com/en-us/subject-catalog/p/mythical-man-month-the-essays-on-software-engineering-anniversary-edition/P200000009044"
+    }
+  ]
+}
