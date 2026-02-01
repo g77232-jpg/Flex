@@ -18,3 +18,17 @@ A balanced team with clear ownership across delivery, quality, and operations.
 - **Definition of done:** Tests passing, documentation updated, and peer review complete.
 - **On-call rotation:** Shared weekly between Backend, DevOps, and Full-Stack roles.
 - **Knowledge sharing:** Weekly tech talk or demo to spread context.
+
+## Current Project Runs
+
+Use this assignment matrix to run the team on current projects. Fill in the project names, then align ownership and support.
+
+| Project | Primary Owner | Support | Run Cadence | Handoff Notes |
+| --- | --- | --- | --- | --- |
+| Project A | Alex Rivera | Marco Chen, Lena Müller | Weekly status update | Tech lead drives scope and delivery milestones. |
+| Project B | Priya Shah | Jamal Brooks | Twice-weekly sync | Frontend owns UI delivery with QA coverage. |
+| Project C | Marco Chen | Sofia Alvarez | Weekly status update | Backend and DevOps coordinate deployments. |
+| Project D | Sofia Alvarez | Noor Patel | Biweekly sync | Infra and data align on observability and pipelines. |
+| Project E | Jamal Brooks | Priya Shah | Weekly status update | QA plans regression with frontend coverage. |
+| Project F | Lena Müller | Marco Chen | Weekly status update | Integration-heavy features owned by full-stack. |
+| Project G | Noor Patel | Sofia Alvarez | Monthly review | Data instrumentation with infra support. |
