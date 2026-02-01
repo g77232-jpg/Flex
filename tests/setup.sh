@@ -62,12 +62,15 @@ fi
 # Function to install bats manually
 install_bats_manually() {
     local temp_dir=$(mktemp -d)
+
+    # Ensure cleanup happens even if installation fails
+    trap 'rm -rf "$temp_dir"' EXIT
+
     cd "$temp_dir"
     git clone https://github.com/bats-core/bats-core.git
     cd bats-core
     sudo ./install.sh /usr/local
-    cd -
-    rm -rf "$temp_dir"
+
     echo "✅ Bats installed manually"
 }
 
