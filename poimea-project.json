@@ -1,0 +1,123 @@
+{
+  "project": {
+    "title": "Poimea",
+    "description": "A 4-phase book and animation project",
+    "created_date": "2025-12-26",
+    "author": "Your Name",
+    "genre": "To be defined"
+  },
+  "deadlines": {
+    "storyboard_complete": "2026-04-01",
+    "book1_rough_draft": "2026-04-26"
+  },
+  "phases": {
+    "book1": {
+      "title": "Poimea - Book 1",
+      "status": "in_progress",
+      "priority": "primary",
+      "target_word_count": 80000,
+      "current_word_count": 0,
+      "chapters_planned": 20,
+      "chapters_completed": 0
+    },
+    "book2": {
+      "title": "Poimea - Book 2",
+      "status": "planned",
+      "priority": "future"
+    },
+    "book3": {
+      "title": "Poimea - Book 3",
+      "status": "planned",
+      "priority": "future"
+    },
+    "book4": {
+      "title": "Poimea - Book 4",
+      "status": "planned",
+      "priority": "future"
+    }
+  },
+  "storyboard": {
+    "total_scenes": 100,
+    "scenes_completed": 0,
+    "scenes_in_progress": 0,
+    "animation_style": "To be defined",
+    "target_runtime_minutes": 90
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Chapter 1 - Opening",
+      "target_words": 4000,
+      "current_words": 0,
+      "status": "not_started",
+      "scenes": ["Scene 1", "Scene 2", "Scene 3"]
+    },
+    {
+      "number": 2,
+      "title": "Chapter 2",
+      "target_words": 4000,
+      "current_words": 0,
+      "status": "not_started",
+      "scenes": ["Scene 4", "Scene 5"]
+    }
+  ],
+  "milestones": [
+    {
+      "name": "World Building Complete",
+      "target_date": "2026-01-15",
+      "completed": false
+    },
+    {
+      "name": "Character Development Complete",
+      "target_date": "2026-01-20",
+      "completed": false
+    },
+    {
+      "name": "Plot Outline Complete",
+      "target_date": "2026-01-25",
+      "completed": false
+    },
+    {
+      "name": "First 5 Chapters Draft",
+      "target_date": "2026-02-15",
+      "completed": false
+    },
+    {
+      "name": "Storyboard 25% Complete",
+      "target_date": "2026-02-01",
+      "completed": false
+    },
+    {
+      "name": "Storyboard 50% Complete",
+      "target_date": "2026-02-25",
+      "completed": false
+    },
+    {
+      "name": "Storyboard 75% Complete",
+      "target_date": "2026-03-15",
+      "completed": false
+    },
+    {
+      "name": "Storyboard Complete",
+      "target_date": "2026-04-01",
+      "completed": false
+    },
+    {
+      "name": "Midpoint - 10 Chapters Draft",
+      "target_date": "2026-03-15",
+      "completed": false
+    },
+    {
+      "name": "Full Rough Draft Complete",
+      "target_date": "2026-04-26",
+      "completed": false
+    }
+  ],
+  "daily_goals": {
+    "writing_words_per_day": 661,
+    "storyboard_scenes_per_day": 1.04,
+    "writing_days_per_week": 6,
+    "rest_days": ["Sunday"]
+  },
+  "progress_log": []
+}
